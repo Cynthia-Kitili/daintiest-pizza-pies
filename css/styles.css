@@ -1,4 +1,8 @@
-
+.container-fluid1{
+    background-image: url('https://www.colourbox.com/preview/5197009-italian-pizza.jpg'),url('https://m.hindustantimes.com/rf/image_size_640x362/HT/p1/2014/09/29/Incoming/Pictures/1269799_Wallpaper2.jpg');
+    padding-top: 70%;
+    background-repeat: no-repeat;
+}
 #slideshow1{
   position:relative;
   height:768px;
@@ -21,4 +25,9 @@
 #slideshow1 img.last-active{
   z-index:9;
   opacity: 0.0;
+}
+.container-fluid2{
+    width:70%;
+    height: 70%;
+    text-align: center;
 }
