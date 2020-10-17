@@ -1,5 +1,15 @@
-body{
+.title{
+  background-color: black;
+  padding-top: -10%;
+  color: whitesmoke;
+  padding-bottom: -10%;
+}
+h1{
+  color: whitesmoke;
   
+}
+h3{
+  color: whitesmoke;
 }
 .container-fluid{
   text-align:center;
@@ -11,6 +21,8 @@ body{
   display: none;
   width: 1000px;
   height: 450px;
+  color: whitesmoke;
+  text-align: center;
 }
 .container-fluid1{
   background-image: url('../img/download.jpeg');
