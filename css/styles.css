@@ -1,13 +1,15 @@
 .container-fluid1{
-    background-image: url('https://www.colourbox.com/preview/5197009-italian-pizza.jpg'),url('https://m.hindustantimes.com/rf/image_size_640x362/HT/p1/2014/09/29/Incoming/Pictures/1269799_Wallpaper2.jpg');
-    padding-top: 70%;
+    background-image: url('..//img/download.png');
+   padding-top: 100%;
     background-repeat: no-repeat;
+   width:50%;
+   height:50%;
 }
 #slideshow1{
   position:relative;
   height:768px;
   width:1024px;
-  float:left;
+  float:right;
 }
 #slideshow1 img{
   position:absolute;
@@ -26,8 +28,10 @@
   z-index:9;
   opacity: 0.0;
 }
-.container-fluid2{
-    width:70%;
-    height: 70%;
+.container{
+    width:50%;
+    height: 50%;
     text-align: center;
+    font-stretch: normal;
+    float: right;
 }
