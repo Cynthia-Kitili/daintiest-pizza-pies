@@ -77,7 +77,7 @@
 
         <div class="container-fluid1">
             <form>
-                <label for="name col-6">Your Name:</label><br>
+                <label for="name" >Your Name:</label><br>
                 <input type="text" id="name" value="" placeholder="Enter your name..."><br>
                 <div class="form-group">
                     <label for="sizes">Select size:</label><br>
@@ -90,7 +90,7 @@
                 </div> 
                 <div class="form-group">
                     <label for="crust">Select Crust:</label><br>
-                    <select class=" col-2" row="3" id="sizes" >
+                    <select class=" col-2" row="3" id="crust" >
                       <option>Select Crust...</option>
                       <option>Crispy</option>
                       <option>Stuffed</option>
@@ -98,6 +98,25 @@
                       <option>Thick Crust</option>
                       <option>Thin Crust</option>
                     </select>
+                </div> 
+                <p style="text-align: center;">Select Topping:</p>
+                <div class="row"> 
+                    <div class=" form-group card col-6" >
+                        <input type="radio" id="pepperoni" name="topping" value="">
+                         <label for="pepperoni"> <img src="img/peperoni-1024x784.jpg" style="width: 30%; height: 50%;">Pepperoni</label><br>
+                         <input type="radio" id="veggie" name="topping" value="">
+                         <label for="veggie"><img src="img/veggie.jpg" style="width: 30%; height: 50%;">Veggie</label><br>
+                         <input type="radio" id="beef" name="topping" value="">
+                         <label for="beef"><img src="img/meat-1024x682.jpg" style="width: 30%; height: 50%;">Beef</label>
+                    </div>    
+                    <div class=" form-group card col-6"> 
+                        <input type="radio" id="seafood" name="topping" value="">    
+                        <label for="seafood"><img src="img/seafood1.jpg" style="width: 30%; height: 50%;">Sea Food</label>
+                        <input type="radio" id="chicken" name="topping" value="">
+                        <label for="chicken"><img src="img/bbqchicken.jpg" style="width: 30%; height: 50%;">Barbecue Chicken</label>
+                        <input type="radio" id="cheese" name="topping" value="">
+                      <label for="cheese"><img src="img/Cheese-1024x683.jpg" style="width: 30%; height: 50%;">Extra Cheese</label>
+                    </div>  
                 </div>      
                 <label for="number">No. of Pies:</label><br>
                 <input type="number" id="number" value="" placeholder="Enter number of pies..."><br>
