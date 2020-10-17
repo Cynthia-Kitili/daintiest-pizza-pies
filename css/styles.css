@@ -30,7 +30,7 @@ h3{
   background-color: black;
   color: whitesmoke;
   height: 500px;
-  width:1953px
+  width:1925px
 }
 .container3{
   text-align: center;
@@ -52,7 +52,7 @@ h3{
   text-align: center;
 }
 .container-fluid1{
-  /*background-image: url('../img/download.jpeg');*/
+  /*background-image: url('../img/download.jpeg');
   background-position: center ;
   background-size: cover;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@ h3{
   margin-top: 40px;
   margin-bottom: 24px;
   width: 2000px;
-  height: 1500px;
+  height: 1500px;*/
  
  
 }  
@@ -103,6 +103,8 @@ h3{
 }
 .container2{
   text-align: center;
+  background-color: black;
+  color: whitesmoke;
  
 }
 .card{
