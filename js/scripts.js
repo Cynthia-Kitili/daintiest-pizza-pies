@@ -1,6 +1,40 @@
+$(document).ready(function(){
+    $("#about-image").click(function(){
+      $("#about-image").slideDown('').hide('');
+     $("#about").show('');
+    });
+    $("#about").click(function(){
+      $("#about").slideUp('');
+      $("#about-image").slideDown('');
+    });
+    
+  });
+  
+  $(document).ready(function(){
+    $("#offer-image").click(function(){
+      $("#offer-image").slideDown('').hide('');
+      $("#offer").show('');
+    });
+    $("#offer").click(function(){
+      $("#offer").slideUp('');
+      $("#offer-image").slideDown('');
+    });
+  });
+  
+  $(document).ready(function(){
+    $("#contact-image").click(function(){
+      $("#contact-image").slideDown('').hide('');
+      $("#contact").show('');
+    });
+    $("#contact").click(function(){
+      $("#contact").slideUp('');
+      $("#contact-image").slideDown('');
+    });
+  });
+
 function slideSwitch() {
 
-    $('img').css('display','none');
+    $('imgcontainer').css('display','none');
     var $active = $('#slideshow1 IMG.active');
     
     if ( $active.length == 0 ){ 
