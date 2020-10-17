@@ -14,6 +14,8 @@ h3{
 .welcome{
   background-color: black;
   color: whitesmoke;
+  height: 500px;
+  width:1953px
 }
 .container3{
   text-align: center;
@@ -44,10 +46,12 @@ h3{
     font-style: oblique;
     font-weight: bold;
    font-size: 15px;
-  margin-top: 12px;
+  margin-top: 40px;
   margin-bottom: 24px;
-  width: 1000px;
-  height: 450px;
+  width: 2000px;
+  height: 700px;
+ 
+ 
 }  
 .container-fluid1 img{
   width: 900%;
@@ -79,7 +83,7 @@ h3{
 .container{
    
     text-align: center;
-   
+    height:480px;
     float: left;
 }
 .container2{
