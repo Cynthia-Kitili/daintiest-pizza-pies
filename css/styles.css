@@ -11,6 +11,16 @@ h1{
 h3{
   color: whitesmoke;
 }
+.welcome{
+  background-color: black;
+  color: whitesmoke;
+}
+.container3{
+  text-align: center;
+  float: right;
+  width: 40%;
+  height: 50%;
+}
 .container-fluid{
   text-align:center;
   width: 50%;
@@ -45,9 +55,9 @@ h3{
 }
 #slideshow1{
   position:relative;
-  height:768px;
-  width:1024px;
-  float:right;
+  height:765px;
+  width:1020px;
+  float:left;
 }
 #slideshow1 img{
   position:absolute;
@@ -69,8 +79,8 @@ h3{
 .container{
    
     text-align: center;
-    font-stretch: normal;
-    float: right;
+   
+    float: left;
 }
 .container2{
   text-align: center;
