@@ -81,11 +81,11 @@ function slideSwitch() {
     $(document).ready(function(){
       $("#deliver-check").click(function () {
         if ($(this).is(":checked")) {
-            $("#deli-hide").show();
-            sumTotal= sumTotal+10;
+            $("#delivery").show();
+            sumTotal= sumTotal+150;
         } else {
-            $("#deli-hide").hide();
-            sumTotal=sumTotal-10;
+            $("#delivery").hide();
+            sumTotal=sumTotal-150;
         }
     });
       $('#orderForm').submit(function(event){
@@ -95,6 +95,8 @@ function slideSwitch() {
         pizzaCrust= $("#crust").val();
         toppingsList=$("#topping")
         var address= $('#street').val();
+        var name=$("name").val();
+        var phone=$("phone").val();
         var pizzaToppings= [];
         var toppingsList;
         $('div#toppings:checkbox:checked').each(function(i){
@@ -106,12 +108,12 @@ function slideSwitch() {
         var orderPrice= priceCalc();
         sumTotal = sumTotal + orderPrice;
         if($('#deliver-check').is(":checked")){
-          alert("order will be delivered at " + address);
+          alert("order will be delivered to " + name +"at" +address +".We will contact you through" +phone);
         }
         var newOrder= new Order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
         $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
         $("#total").text("total:" + sumTotal)
-        $("#deli-hide").hide();
+        $("#delivery").hide();
       });
       $('textarea#message').keypress(function (e) {
         if (e.which == 13) {
