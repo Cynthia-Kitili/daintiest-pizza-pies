@@ -7,13 +7,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
         <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha106-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <title>dainty-pizza</title>
     </head>
-    <body>
+    <body class=container-fluid2>
         <div class="title">
-            <h1>DAINTY~PIZZA~PIES</h1>
+            <h1>DAINTY PIZZA PIES</h1>
             
             <div class="container-fluid">
               
@@ -27,45 +28,31 @@
                             <h3>ABOUT US</h3>
                             <p>Our business model is straightforward: we handcraft and serve quality food at a competitive price, with easy ordering access and efficient service which are aided by our technology innovations. Our dough is generally made fresh and distributed to stores around the world by us and our franchisees.</p>
                         </div>
-                    </div> 
-                    <div class="col-md-4">
-                        <div id="offer-image">
-                            <img src="img/offer.png" style="width: 10%;">
-                            <p>OFFER</p>
-                        </div>
-                        <div id="offer">
-                            <h3>OFFER</h3>
-                            <p>We have weekdays offer buy 1 get 1 free and on weekdays customers get 20% discount on all goods bought.</p>
-                            
-                          </div>
-                    </div> 
-                    <div class="col-md-4">
-                        <div id="contact-image">
-                            <img src="img/contact.png" style="width: 10%;">
-                            <P>CONTACT</P>
-                        </div>
-                        <div id="contact">
-                            <h3>CONTACT</h3>
-                            <a Phone: 0701648692></a>
-                            <a  Email: dainty-pizza@gmail.com ></a>
-                        </div>
-                    </div> 
-                </div>
+                    </div>
             </div> 
-
-
-
-        </div>
         <div class="welcome">
             <div class="container3">
                 <h2>WE BRING <em>TASTE </em> TO LIFE</h2>
                 <p>We believe in the special moments, the moments shared with friends,family and colleagues.</p>
                 <p>Those moments are brought to life everyday here at<strong>Dainty Pizza Palace.</strong> We warm our way through the hearts of the community through our dainty pies.</p>
                 <p>Join this large community to experience those special moments.</p>
+                <img src="img/pizzeria-vector-emblem-on-blackboard-260nw-635547866.webp" style="width: 30%;height: 40%;" alt="logo">
+                <p class="logo">NOTHING BRINGS THE COMMUNITY TOGETHER LIKE A DAINTY SLICE OF PIE</p>
+                <div class="col-md-4">
+                    <div id="offer-image">
+                        <img src="img/offer.png" style="width: 10%;">
+                        <p>OFFER</p>
+                    </div>
+                    <div id="offer">
+                        <h3>OFFER</h3>
+                        <p>We have weekdays offer buy 1 get 1 free and on weekdays customers get 20% discount on all goods bought.</p>
+                        
+                      </div>
+                </div> 
             </div>
             <div class="container">
                <div id="slideshow1" style="width: 100%;">
-                <img src="https://extendthemes.com/demos/mesmerize-pro-food/wp-content/uploads/sites/10/2018/08/pexels-photo-1246957-1.jpeg"style="width: 100%"/> 
+                <img src="https://extendthemes.com/demos/mesmerize-pro-food/wp-content/uploads/sites/30/2018/08/pexels-photo-1246957-1.jpeg"style="width: 100%"/> 
                 <img src="img/119277130-group-of-asian-friends-eating-pizza-during-party-at-pizzeria-happy-indian-people-having-fun-together.jpg" style="width:100%" class="active"/>
                 <img src="img/45174953-cheers-group-of-cheerful-young-people-eating-pizza-and-cheering-with-beer-while-standing-outdoors.jpg" style="width: 100%;"/>
                 <img src="img/c561db111e969ea32d7a7fb22ea3426b.jpg" style="width: 100%;"/>
@@ -75,108 +62,103 @@
 
         </div> 
 
-        <div class="container-fluid1 ">
-            <form id="orderForm">
+        <div class="container-fluid1">
+            <form id="order-form">
                
-                <div class="form-group">
-                  <label for="Size">Choose pizza size:</label>
-                  <select class="form-control col-4" id="Size" required>
-                    <option>Select size...</option> 
+                <div class="form-group col-md-6">
+                    <label for="pizzaSize">Select pizza size:</label>
+                    <select class="form-control" id="pizzaSize" required>
+                    <option>Select size:</option>
                     <option>Small</option>
                     <option>Medium</option>
                     <option>Large</option>
-                  </select>
+                    </select>
                 </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect2">Crust</label>
-                  <select class="form-control col-4 crust" id="crust" placeholder="select crust"required>
+                <div class="form-group col-md-6">
+                    <label for="exampleFormControlSelect2">Crust</label>
+                    <select class="form-control crust" id="pizzaCrust" required>
                     <option>Select Crust...</option>
-                      <option>Thick Crust</option>
-                      <option>Thin Crust</option>
-                      <option>Crispy Crust</option>
-                      <option>Stuffed Crust</option>
-                      <option>Gluten-Free Crust</option>
-                  </select>
-              </div>
-            <div id="toppings" class="form-group row">
+                    <option>Thick Crust</option>
+                    <option>Thin Crust</option>
+                    <option>Crispy Crust</option>
+                    <option>Stuffed Crust</option>
+                    <option>Gluten-Free Crust</option>
+                    </select>
+                </div>
                 <p>Select Toppings:</p>
-                <div class=" card col-md-5">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Pepperoni" id="topping" value="" >
-                      <label class="form-check-label" for="topping1"><img src="img/peperoni-1024x784.jpg" style="width: 10%; height: 30%;">Pepperoni</label>
-                       
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Veggie" id="topping" value="">
-                      <label class="form-check-label" for="topping2"><img src="img/veggie.jpg" style="width: 10%; height: 30%;">
-                        Veggie
-                    </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Beef" id="topping" value="" >
-                      <label class="form-check-label" for="topping3"><img src="img/meat-1024x682.jpg" style="width: 10%; height: 30%;">Beef</label>
-                      
-                    </div>
-                </div>
-                <div class="card col-md-5">
-                    <div class="form-check ">
-                      <input class="form-check-input" type="checkbox" name="SeaFood" id="topping" value="">
-                      <label class="form-check-label" for="topping4"><img src="img/seafood1.jpg" style="width: 10%; height: 30%;">Sea Food</label>
-                       
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Barbecue Chicken" id="topping" value="" >
-                      <label class="form-check-label" for="topping5"><img src="img/bbqchicken.jpg" style="width: 10%; height: 30%;">Barbecue Chicken</label>
-                       
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="Extra-cheese" id="topping" value="" >
-                        <label class="form-check-label" for="topping6"><img src="img/Cheese-1024x683.jpg" style="width: 10%; height: 30%;">Extra Cheese</label>
+                <div id="toppings" class="form-group row">
+                    <div class=" card col-md-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Pepperoni" id="topping" value="" >
+                            <label class="form-check-label" for="topping1"><img src="img/peperoni-1024x784.jpg" style="width: 20%; height: 20%;">Pepperoni</label>
                          
-                      </div>
-                </div>
-            </div>    
-                <div class="col-md-6">
-                <div class="form-group row">
-                    <label for="number" class="col-2 col-form-label">Number of Pies:</label>
-                    <div class="col-3">
-                      <input class="form-control" type="number" value="" id="number">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Veggie" id="topping" value="">
+                             <label class="form-check-label" for="topping2"><img src="img/veggie.jpg" style="width: 20%; height: 20%;">
+                             Veggie
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Beef" id="topping" value="" >
+                            <label class="form-check-label" for="topping3"><img src="img/meat-1024x682.jpg" style="width: 20%; height: 20%;">Beef</label>
+                        
+                        </div>
                     </div>
-                  </div>
-               
-                <div class="form-group row">
-                <div id="delivery-click" class="form-check col-md-4">
-                  <input class="form-check-input" type="checkbox" name="deliver" id="delivery-check" value="">
-                  <label class="form-check-label" for="deliver-check">
-                    Click for Delivery:
-                  </label>
-                </div>
-                <div id="delivery" class="col-md-10" style="display: none;">
-                  <div class="form-group row">
-                    <label class="form-check-label" for="delivery-check">
-                      delivery for Ksh.150
-                    </label>
-                    <div class="col-md-10">
-                      <input type="text" class="form-control mb-2 mr-sm-2" id="street" placeholder="Enter adress with street..">
-                      <input type="number" class="form-control mb-2 mr-sm-2" id="phone" placeholder="phone...">
-                      
-                      
+                    <div class="card col-md-5">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="checkbox" name="SeaFood" id="topping" value="">
+                            <label class="form-check-label" for="topping4"><img src="img/seafood1.jpg" style="width: 20%; height: 20%;">Sea Food</label>
+                         
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Barbecue Chicken" id="topping" value="" >
+                            <label class="form-check-label" for="topping5"><img src="img/bbqchicken.jpg" style="width: 20%; height: 20%;">Barbecue Chicken</label>
+                          
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="Extra-cheese" id="topping" value="" >
+                            <label class="form-check-label" for="topping6"><img src="img/Cheese-1024x683.jpg" style="width: 20%; height: 20%;">Extra Cheese</label>
+                           
+                        </div>
                     </div>
-                  </div>
+                </div>    
+                <div class="form-group row">
+                    <label for="pizza-number" class="col-2 col-form-label">Number of Pies:</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="" id="pizzaNumber">
+                    </div>
                 </div>
+                
+                <div class="form-group row">
+                   <div id="delivery-click" class="form-check col-md-2">
+                       <input class="form-check-input" type="checkbox" name="deliver" id="delivery-check" value="">
+                       <label class="form-check-label" for="deliver-check">
+                       Deliver
+                       </label>
+                    </div>
+                    <div id="delivery" class="col-md-10" style="display: none;">
+                        <div class="form-group row">
+                            <label class="form-check-label" for="delivery-check">
+                            Delivery for Ksh.150
+                            </label>
+                        <div class="col-md-10">
+                           <input type="text" class="form-control mb-2 mr-sm-2" id="street" placeholder="Enter adress with street..">
+                           <input type="number" class="form-control mb-2 mr-sm-2" id="phone" placeholder="Enter phone number..">
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-dark">Order</button>
-                
-                
-              </form>
-              <ul id="orders">
+                <ul id="orders">
         
-              </ul>
-              <p><span id="total"> </span></p>
-            </div>
-          </div>
+                </ul>
+                <p><span id="total"> </span></p>
          
             </form>
-          </div>
-        </body>
-        </html>
+        </div>
+                  
+
+  
+    </body>
+</html>
+

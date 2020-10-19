@@ -59,105 +59,100 @@ function slideSwitch() {
     }
     
     $(function() {
-      setInterval( "slideSwitch()", 5000 );
-    });
- 
+      setInterval( "slideSwitch()", 4000 );}
+    );
+  
     
-
-    var totalCost = 0;
-    var toppingsArray= [];
-    var toppingsList;
-    var toppingsNumber;
-    var pizzaSize;
-    var pizzaCrust;
-    var pizzaNumber;
-    function order(number,size,crust,toppingsList,price){
-      this.number = number;
-      this.size=size;
-      this.crust=crust;
-      this.toppingsList=toppingsList;
-      this.price=price;
-    }
-    
-    });
-      $('#orderForm').submit(function(event){
-        event.preventDefault();
-        pizzaSize= $('#Size').val();
-        pizzaNumber= $("#number").val();
-        pizzaCrust= $("#crust").val();
-        toppingsList=$("#toppings").val();
-        var address= $('#street').val();
-        
-        var phone=$("#phone").val();
-        var pizzaToppings= [];
-        var toppingsList;
-        $('div#topping:checkbox:checked').each(function(i){
-          pizzaToppings[i] = $(this).val();
-          toppingsArray[i] = $(this).attr('topping')
-        });
-        toppingsList = toppingsArray.join(',');
-        toppingsNumber= toppingsArray.length;
-        var orderPrice= calculation();
-        totalCost = totalCost + orderPrice;
-        if($('#delivery-check').is(":checked")){
-          alert("Hello your order will be delivered to" +address +".We will contact you through" + phone);
-        }
-        var newOrder= new order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
-        $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
-        $("#total").text("total:" + totalCost)
+var totalCost = 0;
+var toppingsArray= [];
+var toppingsList;
+var toppingsNumber;
+var pizzaSize;
+var pizzaCrust;
+var pizzaNumber;
+function order(number,size,crust,toppings,price){
+  this.number = number;
+  this.size=size;
+  this.crust=crust;
+  this.toppings=toppings;
+  this.price=price;
+}
+$(document).ready(function(){
+  $("#delivery-check").click(function () {
+    if ($(this).is(":checked")) {
+        $("#delivery").show();
+        totalCost= totalCost+150;
+    } else {
         $("#delivery").hide();
-      });
-      
+        totalCost=totalCost-150;
+    }
+});
+  $('#order-form').submit(function(event){
+    event.preventDefault();
+    pizzaSize= $('#pizzaSize').val();
+    pizzaNumber= $("#pizzaNumber").val();
+    pizzaCrust= $("#pizzaCrust").val();
+    var address= $('#street').val();
+    var phone= $('#phone').val();
+    var pizzaToppings= [];
+    var toppingsList;
+    $('div#toppings:checkbox:checked').each(function(i){
+      pizzaToppings[i] = $(this).val();
+      toppingsArray[i] = $(this).attr('name')
     });
-    function calculation(){
-      var crustPrice,toppingsPrice;
-      var newPrice;
-      var totalPrice;
-      if(pizzaSize=='Small'){
-        newPrice=500;
-      }else if(pizzaSize=='Medium'){
-        newPrice=800;
-      }else if(pizzaSize=='Large'){
-        newPrice=1000;
-      }
-      if (pizzaCrust=='Thick Crust'){
-        crustPrice=newPrice*3;
-      }else if(pizzaCrust=='Thin Crust'){
-        crustPrice=newPrice * 1;
-      }else if(pizzaCrust=='Crispy Crust'){
-        crustPrice=newPrice*2;
-      }else if(pizzaCrust=='Stuffed Crust'){
-        crustPrice=newPrice*2;
-      }else if(pizzaCrust=='Gluten-Free'){
-      crustPrice=newPrice*2.5;
-      }
-      if(pizzaToppings="Pepperoni"){
-        toppingsPrice=newPrice*3;
-      }else if(pizzaToppings="Veggie"){
-        toppingsPrice=newPrice*2.5;
-      }else if(pizzaToppings="Beef"){
-      toppingsPrice=newPrice*2;
-      }else if(pizzaToppings="SeaFood"){
-        toppingsPrice=newPrice*1;
-      }else if(pizzaToppings="BarbecueChicken"){
-        toppingsPrice=newPrice*1.5;
-      }else if(pizzaToppings="ExtraCheese"){
-        toppingsPrice=newPrice*1;
-      }
-      
-      totalPrice= (crustPrice+toppingsPrice)*pizzaNumber;
-      return totalPrice;
+    toppingsList = toppingsArray.join(',');
+    toppingsNumber= toppingsArray.length;
+    var orderPrice= calculation();
+    totalCost = totalCost + orderPrice;
+    if($('#delivery-check').is(":checked")){
+      alert("order will be delivered at " + address+ ".We will contact you through" + phone);
     }
-    order.prototype.theOrder = function (){
-      return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppingsList + " toppings.<br> Cost:"+"Ksh"+ this.price;
-    }
-    }
-    $(document).ready(function(){
-      $("#delivery-check").click(function () {
-        if ($(this).is(":checked")) {
-            $("#delivery").show();
-            totalCost= totalCost+150;
-        } else {
-            $("#delivery").hide();
-            totalCost=totalCost-150;
-        }
+    var newOrder= new order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
+    $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
+    $("#total").text("total:" + totalCost)
+    $("#delivery").hide();
+  });
+  
+});
+function calculation(){
+  var crustPrice,toppingsPrice;
+  var newPrice;
+  var totalPrice;
+  if(pizzaSize=='Small'){
+    newPrice=500;
+  }else if(pizzaSize=='Medium'){
+    newPrice=800;
+  }else if(pizzaSize=='Large'){
+    newPrice=1000;
+  }
+  if (pizzaCrust=='Thick Crust'){
+    crustPrice=newPrice+150;
+  }else if(pizzaCrust=='Thin Crust'){
+    crustPrice=newPrice +50;
+  }else if(pizzaCrust=='Crispy Crust'){
+    crustPrice=newPrice+150;
+  }else if(pizzaCrust=='Stuffed Crust'){
+    crustPrice=newPrice+150;
+  }else if(pizzaCrust=='Gluten-Free'){
+  crustPrice=newPrice+50;
+  }
+  if(pizzaToppings="Pepperoni"){
+    toppingsPrice=newPrice+100;
+  }else if(pizzaToppings="Veggie"){
+    toppingsPrice=newPrice+50;
+  }else if(pizzaToppings="Beef"){
+  toppingsPrice=newPrice+100;
+  }else if(pizzaToppings="SeaFood"){
+    toppingsPrice=newPrice+200;
+  }else if(pizzaToppings="BarbecueChicken"){
+    toppingsPrice=newPrice+100;
+  }else if(pizzaToppings="ExtraCheese"){
+    toppingsPrice=newPrice+50;
+  }
+ 
+  totalPrice= (crustPrice+toppingsPrice)*pizzaNumber;
+  return totalPrice;
+}
+order.prototype.theOrder = function (){
+  return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppings + " toppings.<br> Cost:"+this.price+"Ksh";
+}
