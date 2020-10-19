@@ -79,7 +79,7 @@ function slideSwitch() {
       this.price=price;
     }
     $(document).ready(function(){
-      $("#deliver-check").click(function () {
+      $("#delivery-check").click(function () {
         if ($(this).is(":checked")) {
             $("#delivery").show();
             sumTotal= sumTotal+150;
@@ -95,8 +95,8 @@ function slideSwitch() {
         pizzaCrust= $("#crust").val();
         toppingsList=$("#topping")
         var address= $('#street').val();
-        var name=$("name").val();
-        var phone=$("phone").val();
+        
+        var phone=$("#phone").val();
         var pizzaToppings= [];
         var toppingsList;
         $('div#toppings:checkbox:checked').each(function(i){
@@ -107,8 +107,8 @@ function slideSwitch() {
         toppingsNumber= toppingsArray.length;
         var orderPrice= priceCalc();
         sumTotal = sumTotal + orderPrice;
-        if($('#deliver-check').is(":checked")){
-          alert("order will be delivered to " + name +"at" +address +".We will contact you through" +phone);
+        if($('#delivery-check').is(":checked")){
+          alert("Hello your order will be delivered to" +address +".We will contact you through" + phone);
         }
         var newOrder= new Order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
         $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
