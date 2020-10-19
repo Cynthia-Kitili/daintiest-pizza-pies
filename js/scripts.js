@@ -64,67 +64,52 @@ function slideSwitch() {
  
     
 
-    var sumTotal = 0;
+    var totalCost = 0;
     var toppingsArray= [];
     var toppingsList;
     var toppingsNumber;
     var pizzaSize;
     var pizzaCrust;
     var pizzaNumber;
-    function Order(number,size,crust,toppings,price){
+    function order(number,size,crust,toppingsList,price){
       this.number = number;
       this.size=size;
       this.crust=crust;
-      this.toppings=toppings;
+      this.toppingsList=toppingsList;
       this.price=price;
     }
-    $(document).ready(function(){
-      $("#delivery-check").click(function () {
-        if ($(this).is(":checked")) {
-            $("#delivery").show();
-            sumTotal= sumTotal+150;
-        } else {
-            $("#delivery").hide();
-            sumTotal=sumTotal-150;
-        }
+    
     });
       $('#orderForm').submit(function(event){
         event.preventDefault();
         pizzaSize= $('#Size').val();
         pizzaNumber= $("#number").val();
         pizzaCrust= $("#crust").val();
-        toppingsList=$("#topping")
+        toppingsList=$("#toppings").val();
         var address= $('#street').val();
         
         var phone=$("#phone").val();
         var pizzaToppings= [];
         var toppingsList;
-        $('div#toppings:checkbox:checked').each(function(i){
+        $('div#topping:checkbox:checked').each(function(i){
           pizzaToppings[i] = $(this).val();
-          toppingsArray[i] = $(this).attr('name')
+          toppingsArray[i] = $(this).attr('topping')
         });
         toppingsList = toppingsArray.join(',');
         toppingsNumber= toppingsArray.length;
-        var orderPrice= priceCalc();
-        sumTotal = sumTotal + orderPrice;
+        var orderPrice= calculation();
+        totalCost = totalCost + orderPrice;
         if($('#delivery-check').is(":checked")){
           alert("Hello your order will be delivered to" +address +".We will contact you through" + phone);
         }
-        var newOrder= new Order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
+        var newOrder= new order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
         $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
-        $("#total").text("total:" + sumTotal)
+        $("#total").text("total:" + totalCost)
         $("#delivery").hide();
       });
-      $('textarea#message').keypress(function (e) {
-        if (e.which == 13) {
-          $('form#feedback').submit();
-          var feedname= $('#name').val();
-          alert(feedname + ". Thanks for your feedback. It's highly appreciated.");
-          return false;    
-        }
-      });
+      
     });
-    function priceCalc(){
+    function calculation(){
       var crustPrice,toppingsPrice;
       var newPrice;
       var totalPrice;
@@ -146,13 +131,33 @@ function slideSwitch() {
       }else if(pizzaCrust=='Gluten-Free'){
       crustPrice=newPrice*2.5;
       }
-      toppingsPrice= toppingsNumber * newPrice;
+      if(pizzaToppings="Pepperoni"){
+        toppingsPrice=newPrice*3;
+      }else if(pizzaToppings="Veggie"){
+        toppingsPrice=newPrice*2.5;
+      }else if(pizzaToppings="Beef"){
+      toppingsPrice=newPrice*2;
+      }else if(pizzaToppings="SeaFood"){
+        toppingsPrice=newPrice*1;
+      }else if(pizzaToppings="BarbecueChicken"){
+        toppingsPrice=newPrice*1.5;
+      }else if(pizzaToppings="ExtraCheese"){
+        toppingsPrice=newPrice*1;
+      }
+      
       totalPrice= (crustPrice+toppingsPrice)*pizzaNumber;
       return totalPrice;
     }
-    Order.prototype.theOrder = function (){
-      return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppings + " toppings.<br> Cost:"+this.price+"Ksh";
+    order.prototype.theOrder = function (){
+      return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppingsList + " toppings.<br> Cost:"+"Ksh"+ this.price;
     }
-    function reload(){
-      location.reload();}
-    
+    }
+    $(document).ready(function(){
+      $("#delivery-check").click(function () {
+        if ($(this).is(":checked")) {
+            $("#delivery").show();
+            totalCost= totalCost+150;
+        } else {
+            $("#delivery").hide();
+            totalCost=totalCost-150;
+        }
