@@ -65,7 +65,7 @@
             </div>
             <div class="container">
                <div id="slideshow1" style="width: 100%;">
-                <img src="https://extendthemes.com/demos/mesmerize-pro-food/wp-content/uploads/sites/30/2018/08/pexels-photo-1246957-1.jpeg"style="width: 100%"/> 
+                <img src="https://extendthemes.com/demos/mesmerize-pro-food/wp-content/uploads/sites/10/2018/08/pexels-photo-1246957-1.jpeg"style="width: 100%"/> 
                 <img src="img/119277130-group-of-asian-friends-eating-pizza-during-party-at-pizzeria-happy-indian-people-having-fun-together.jpg" style="width:100%" class="active"/>
                 <img src="img/45174953-cheers-group-of-cheerful-young-people-eating-pizza-and-cheering-with-beer-while-standing-outdoors.jpg" style="width: 100%;"/>
                 <img src="img/c561db111e969ea32d7a7fb22ea3426b.jpg" style="width: 100%;"/>
@@ -75,13 +75,13 @@
 
         </div> 
 
-        <div class="container-fluid1">
+        <div class="container-fluid1 ">
             <form id="orderForm">
                
                 <div class="form-group">
                   <label for="Size">Choose pizza size:</label>
                   <select class="form-control col-4" id="Size" required>
-                    <option>Others</option> 
+                    <option>Select size...</option> 
                     <option>Small</option>
                     <option>Medium</option>
                     <option>Large</option>
@@ -89,8 +89,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect2">Crust</label>
-                  <select class="form-control col-4 crust" id="crust" required>
-                      <option selected></option>
+                  <select class="form-control col-4 crust" id="crust" placeholder="select crust"required>
+                    <option>Select Crust...</option>
                       <option>Thick Crust</option>
                       <option>Thin Crust</option>
                       <option>Crispy Crust</option>
@@ -98,56 +98,52 @@
                       <option>Gluten-Free Crust</option>
                   </select>
               </div>
-                <div id="toppings" class="form-group row">
-                  <div class="col-md-6">
+            <div id="toppings" class="form-group row">
+                <p>Select Toppings:</p>
+                <div class=" card col-md-5">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Pepperoni" id="topping1" value="" >
-                      <label class="form-check-label" for="topping1">
-                        Pepperoni
-                      </label>
+                      <input class="form-check-input" type="checkbox" name="Pepperoni" id="topping" value="" >
+                      <label class="form-check-label" for="topping1"><img src="img/peperoni-1024x784.jpg" style="width: 10%; height: 30%;">Pepperoni</label>
+                       
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Veggie" id="topping2" value="">
-                      <label class="form-check-label" for="topping2">
+                      <input class="form-check-input" type="checkbox" name="Veggie" id="topping" value="">
+                      <label class="form-check-label" for="topping2"><img src="img/veggie.jpg" style="width: 10%; height: 30%;">
                         Veggie
-                      </label>
+                    </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Beef" id="topping3" value="" >
-                      <label class="form-check-label" for="topping3">
-                        Beef
-                      </label>
+                      <input class="form-check-input" type="checkbox" name="Beef" id="topping" value="" >
+                      <label class="form-check-label" for="topping3"><img src="img/meat-1024x682.jpg" style="width: 10%; height: 30%;">Beef</label>
+                      
+                    </div>
+                </div>
+                <div class="card col-md-5">
+                    <div class="form-check ">
+                      <input class="form-check-input" type="checkbox" name="SeaFood" id="topping" value="">
+                      <label class="form-check-label" for="topping4"><img src="img/seafood1.jpg" style="width: 10%; height: 30%;">Sea Food</label>
+                       
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="SeaFood" id="topping4" value="">
-                      <label class="form-check-label" for="topping4">
-                        SeaFood
-                      </label>
+                      <input class="form-check-input" type="checkbox" name="Barbecue Chicken" id="topping" value="" >
+                      <label class="form-check-label" for="topping5"><img src="img/bbqchicken.jpg" style="width: 10%; height: 30%;">Barbecue Chicken</label>
+                       
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="Barbecue Chicken" id="topping5" value="" >
-                      <label class="form-check-label" for="topping5">
-                        Barbecue Chicken
-                      </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="Extra-cheese" id="topping6" value="" >
-                        <label class="form-check-label" for="topping6">
-                          Extra-cheese
-                        </label>
+                        <input class="form-check-input" type="checkbox" name="Extra-cheese" id="topping" value="" >
+                        <label class="form-check-label" for="topping6"><img src="img/Cheese-1024x683.jpg" style="width: 10%; height: 30%;">Extra Cheese</label>
+                         
                       </div>
-                  </div>
+                </div>
+            </div>    
                 <div class="col-md-6">
                 <div class="form-group row">
-                    <label for="pizzaNumber" class="col-2 col-form-label">Number of Pies:</label>
+                    <label for="number" class="col-2 col-form-label">Number of Pies:</label>
                     <div class="col-3">
                       <input class="form-control" type="number" value="" id="number">
                     </div>
                   </div>
-                <div class="form-group">
-                  <label for="textareaadditionalinfo">Any additional specifications:</label>
-                  <textarea class="form-control" id="textareaadditionalinfo" rows="3"></textarea>
-                </div>
+               
                 <div class="form-group row">
                 <div id="deli-show" class="form-check col-md-2">
                   <input class="form-check-input" type="checkbox" name="deliver" id="deliver-check" value="">
@@ -176,7 +172,7 @@
               <p><span id="total"> </span></p>
             </div>
           </div>
-          <div id="contact" class="container-fluid padding bg3">
+          <div id="contact" class="container-fluid ">
             <h2>contact us:</h2>
             <form id="feedback">
               <div class="form-row">

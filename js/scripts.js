@@ -90,9 +90,10 @@ function slideSwitch() {
     });
       $('#orderForm').submit(function(event){
         event.preventDefault();
-        pizzaSize= $('#size').val();
+        pizzaSize= $('#Size').val();
         pizzaNumber= $("#number").val();
         pizzaCrust= $("#crust").val();
+        toppingsList=$("#topping")
         var address= $('#street').val();
         var pizzaToppings= [];
         var toppingsList;
@@ -117,7 +118,7 @@ function slideSwitch() {
           $('form#feedback').submit();
           var feedname= $('#name').val();
           alert(feedname + ". Thanks for your feedback. It's highly appreciated.");
-          return false;    //<---- Add this line
+          return false;    
         }
       });
     });
@@ -148,7 +149,7 @@ function slideSwitch() {
       return totalPrice;
     }
     Order.prototype.theOrder = function (){
-      return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppings + " toppings.<br> Cost:"+this.price+"$";
+      return this.number + " " + this.size + "pizzas, " +  this.crust + ",with " + this.toppings + " toppings.<br> Cost:"+this.price+"Ksh";
     }
     function reload(){
       location.reload();}
