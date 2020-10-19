@@ -67,10 +67,10 @@ function slideSwitch() {
     var sumTotal = 0;
     var toppingsArray= [];
     var toppingsList;
-    var toppingsNbr;
+    var toppingsNumber;
     var pizzaSize;
     var pizzaCrust;
-    var pizzaNbr;
+    var pizzaNumber;
     function Order(number,size,crust,toppings,price){
       this.number = number;
       this.size=size;
@@ -90,8 +90,8 @@ function slideSwitch() {
     });
       $('#orderForm').submit(function(event){
         event.preventDefault();
-        pizzaSize= $('#pizza-size').val();
-        pizzaNbr= $("#pizzaNumber").val();
+        pizzaSize= $('#size').val();
+        pizzaNumber= $("#number").val();
         pizzaCrust= $("#crust").val();
         var address= $('#street').val();
         var pizzaToppings= [];
@@ -101,13 +101,13 @@ function slideSwitch() {
           toppingsArray[i] = $(this).attr('name')
         });
         toppingsList = toppingsArray.join(',');
-        toppingsNbr= toppingsArray.length;
+        toppingsNumber= toppingsArray.length;
         var orderPrice= priceCalc();
         sumTotal = sumTotal + orderPrice;
         if($('#deliver-check').is(":checked")){
           alert("order will be delivered at " + address);
         }
-        var newOrder= new Order(pizzaNbr,pizzaSize,pizzaCrust,toppingsList,orderPrice)
+        var newOrder= new Order(pizzaNumber,pizzaSize,pizzaCrust,toppingsList,orderPrice)
         $("ul#orders").append('<li><span>'+ newOrder.theOrder() +'</span></li>');
         $("#total").text("total:" + sumTotal)
         $("#deli-hide").hide();
@@ -132,17 +132,19 @@ function slideSwitch() {
       }else if(pizzaSize=='Large'){
         sizeChange=2;
       }
-      if (pizzaCrust=='Thin Crust'){
+      if (pizzaCrust=='Thick Crust'){
         crustPrice=sizeChange*2.5;
-      }else if(pizzaCrust=='Thick Crust'){
+      }else if(pizzaCrust=='Thin Crust'){
         crustPrice=sizeChange * 3;
-      }else if(pizzaCrust=='Pan Crust'){
+      }else if(pizzaCrust=='Crispy Crust'){
         crustPrice=sizeChange*2.5;
-      }else if(pizzaCrust=='Cheese Filled Crust'){
+      }else if(pizzaCrust=='Stuffed Crust'){
         crustPrice=sizeChange*2.5;
+      }else if(pizzaCrust=='Stuffed Crust'){
+      crustPrice=sizeChange*2.5;
       }
-      toppingsPrice= toppingsNbr * sizeChange;
-      totalPrice= (crustPrice+toppingsPrice)*pizzaNbr;
+      toppingsPrice= toppingsNumber * sizeChange;
+      totalPrice= (crustPrice+toppingsPrice)*pizzaNumber;
       return totalPrice;
     }
     Order.prototype.theOrder = function (){

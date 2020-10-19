@@ -79,8 +79,9 @@
             <form id="orderForm">
                
                 <div class="form-group">
-                  <label for="pizza-size">Choose pizza size:</label>
-                  <select class="form-control" id="pizza-size" required>
+                  <label for="Size">Choose pizza size:</label>
+                  <select class="form-control col-4" id="Size" required>
+                    <option>Others</option> 
                     <option>Small</option>
                     <option>Medium</option>
                     <option>Large</option>
@@ -88,13 +89,13 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect2">Crust</label>
-                  <select class="form-control crust" id="crust" required>
+                  <select class="form-control col-4 crust" id="crust" required>
                       <option selected></option>
-                      <option>Thin Crust</option>
                       <option>Thick Crust</option>
-                      <option>Pan Crust</option>
-                      <option>Cheese Filled Crust</option>
+                      <option>Thin Crust</option>
+                      <option>Crispy Crust</option>
                       <option>Stuffed Crust</option>
+                      <option>Gluten-Free Crust</option>
                   </select>
               </div>
                 <div id="toppings" class="form-group row">
@@ -166,7 +167,7 @@
                 <div class="form-group row">
                     <label for="pizzaNumber" class="col-2 col-form-label">Number of Pies:</label>
                     <div class="col-3">
-                      <input class="form-control" type="number" value="" id="pizzaNumber">
+                      <input class="form-control" type="number" value="" id="number">
                     </div>
                   </div>
                 <div class="form-group">
