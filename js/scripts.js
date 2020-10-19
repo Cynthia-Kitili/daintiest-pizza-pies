@@ -126,27 +126,27 @@ function slideSwitch() {
     });
     function priceCalc(){
       var crustPrice,toppingsPrice;
-      var sizeChange;
+      var newPrice;
       var totalPrice;
       if(pizzaSize=='Small'){
-        sizeChange=1;
+        newPrice=500;
       }else if(pizzaSize=='Medium'){
-        sizeChange=1.5;
+        newPrice=800;
       }else if(pizzaSize=='Large'){
-        sizeChange=2;
+        newPrice=1000;
       }
       if (pizzaCrust=='Thick Crust'){
-        crustPrice=sizeChange*2.5;
+        crustPrice=newPrice*3;
       }else if(pizzaCrust=='Thin Crust'){
-        crustPrice=sizeChange * 3;
+        crustPrice=newPrice * 1;
       }else if(pizzaCrust=='Crispy Crust'){
-        crustPrice=sizeChange*2.5;
+        crustPrice=newPrice*2;
       }else if(pizzaCrust=='Stuffed Crust'){
-        crustPrice=sizeChange*2.5;
-      }else if(pizzaCrust=='Stuffed Crust'){
-      crustPrice=sizeChange*2.5;
+        crustPrice=newPrice*2;
+      }else if(pizzaCrust=='Gluten-Free'){
+      crustPrice=newPrice*2.5;
       }
-      toppingsPrice= toppingsNumber * sizeChange;
+      toppingsPrice= toppingsNumber * newPrice;
       totalPrice= (crustPrice+toppingsPrice)*pizzaNumber;
       return totalPrice;
     }
