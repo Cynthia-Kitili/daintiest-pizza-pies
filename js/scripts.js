@@ -88,10 +88,10 @@ function slideSwitch() {
             sumTotal=sumTotal-10;
         }
     });
-      $('#order-form').submit(function(event){
+      $('#orderForm').submit(function(event){
         event.preventDefault();
         pizzaSize= $('#pizza-size').val();
-        pizzaNbr= $("#pizza-number").val();
+        pizzaNbr= $("#pizzaNumber").val();
         pizzaCrust= $("#crust").val();
         var address= $('#street').val();
         var pizzaToppings= [];
