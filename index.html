@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eng">
+ <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,99 +76,145 @@
         </div> 
 
         <div class="container-fluid1">
-            <form id="orderForm">
-                <label for="name" >Your Name:</label><br>
-                <input type="text" id="name" value="" placeholder="Enter your name..."><br>
+            <form id="order-form">
+                <div class="form-group row">
+                  <label for="pizza-number" class="col-2 col-form-label">how many pizzas:</label>
+                  <div class="col-10">
+                    <input class="form-control" type="number" value="1" id="pizza-number">
+                  </div>
+                </div>
                 <div class="form-group">
-                    <label for="sizes">Select size:</label><br>
-                    <select class=" col-2" row="3" id="size" >
-                      <option>Select Size...</option>
-                      <option>Small</option>
-                      <option>Medium</option>
-                      <option>Large</option>
-                    </select>
-                </div> 
+                  <label for="pizza-size">Choose pizza size:</label>
+                  <select class="form-control" id="pizza-size" required>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                  </select>
+                </div>
                 <div class="form-group">
-                    <label for="crust">Select Crust:</label><br>
-                    <select class=" col-2" row="3" id="crust" >
-                      <option>Select Crust...</option>
-                      <option>Crispy</option>
-                      <option>Stuffed</option>
-                      <option>Gluten-Free</option>
-                      <option>Thick Crust</option>
+                  <label for="exampleFormControlSelect2">Crust</label>
+                  <select class="form-control crust" id="crust" required>
+                      <option selected></option>
                       <option>Thin Crust</option>
-                    </select>
-                </div> 
-                <p style="text-align: center;">Select Topping:</p>
-                <div class="row"id="toppings"> 
-                    <div class=" form-group card col-6" >
-                        <input type="radio" id="pepperoni" name="topping" value="">
-                         <label for="pepperoni"> <img src="img/peperoni-1024x784.jpg" style="width: 30%; height: 50%;">Pepperoni</label><br>
-                         <input type="radio" id="veggie" name="topping" value="">
-                         <label for="veggie"><img src="img/veggie.jpg" style="width: 30%; height: 50%;">Veggie</label><br>
-                         <input type="radio" id="beef" name="topping" value="">
-                         <label for="beef"><img src="img/meat-1024x682.jpg" style="width: 30%; height: 50%;">Beef</label>
-                    </div>    
-                    <div class=" form-group card col-6"> 
-                        <input type="radio" id="seafood" name="topping" value="">    
-                        <label for="seafood"><img src="img/seafood1.jpg" style="width: 30%; height: 50%;">Sea Food</label>
-                        <input type="radio" id="chicken" name="topping" value="">
-                        <label for="chicken"><img src="img/bbqchicken.jpg" style="width: 30%; height: 50%;">Barbecue Chicken</label>
-                        <input type="radio" id="cheese" name="topping" value="">
-                      <label for="cheese"><img src="img/Cheese-1024x683.jpg" style="width: 30%; height: 50%;">Extra Cheese</label>
-                    </div>  
-                </div>      
-                <label for="number">No. of Pies:</label><br>
-                <input type="number" id="number" value="" placeholder="Enter number of pies..."><br>
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <form class="result" id="answer" action="index.html" method="post">
-                <div class="form-group">
-                    <input type="textarea" name="output" id="output">
-                
-            </form>
-            
-        </div>
-        <div class="container2">
-            <h2>If you would like your order delivered fill in the form below</h2>
-            <form>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="email">
+                      <option>Thick Crust</option>
+                      <option>Pan Crust</option>
+                      <option>Cheese Filled Crust</option>
+                      <option>Stuffed Crust</option>
+                  </select>
+              </div>
+                <div id="toppings" class="form-group row">
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="Pepperoni" id="topping1" value="" >
+                      <label class="form-check-label" for="topping1">
+                        Pepperoni
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="Mushrooms" id="topping2" value="">
+                      <label class="form-check-label" for="topping2">
+                        Mushrooms
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="Onions" id="topping3" value="" >
+                      <label class="form-check-label" for="topping3">
+                        Onions
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="Sausage" id="topping4" value="">
+                      <label class="form-check-label" for="topping4">
+                        Sausage
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="Bacon" id="topping5" value="" >
+                      <label class="form-check-label" for="topping5">
+                        Bacon
+                      </label>
+                    </div>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputphonenumber">Phone No.:</label>
-                    <input type="number" class="form-control" id="phonenumber">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Extra-cheese" id="topping6" value="" >
+                    <label class="form-check-label" for="topping6">
+                      Extra-cheese
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Black-olives" id="topping7" value="">
+                    <label class="form-check-label" for="topping7">
+                      Black-olives
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Green-pepper" id="topping8" value="" >
+                    <label class="form-check-label" for="topping8">
+                      Green-pepper
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Pineapple" id="topping9" value="">
+                    <label class="form-check-label" for="topping9">
+                      Pineapple
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Spinach" id="topping10" value="" >
+                    <label class="form-check-label" for="topping10">
+                      Spinach
+                    </label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputstreet">street</label>
-                  <input type="text" class="form-control" id="street" placeholder="">
                 </div>
-                
-                 
-               
-                </div>
-               
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <form class="result" id="answer" action="index.html" method="post">
                 <div class="form-group">
-                    <input type="textarea" name="output" id="output">
+                  <label for="textareaadditionalinfo">Any additional specifications:</label>
+                  <textarea class="form-control" id="textareaadditionalinfo" rows="3"></textarea>
+                </div>
+                <div class="form-group row">
+                <div id="deli-show" class="form-check col-md-2">
+                  <input class="form-check-input" type="checkbox" name="deliver" id="deliver-check" value="">
+                  <label class="form-check-label" for="deliver-check">
+                    Deliver
+                  </label>
+                </div>
+                <div id="deli-hide" class="col-md-10" style="display: none;">
+                  <div class="form-group row">
+                    <label class="form-check-label" for="deliver-check">
+                      delivery for 10$
+                    </label>
+                    <div class="col-md-10">
+                      <input type="text" class="form-control mb-2 mr-sm-2" id="street" placeholder="Enter adress with street..">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <button type="submit" class="btn btn-dark">Order</button>
+                <button type="reset" class="btn btn-dark">Clear</button>
+                <button type="" class="btn btn-dark" onclick="reload()">click when Done</button>
               </form>
-                                   
-
-                        
-                </div>
-            </div>
-        </div>
-
-
-
+              <ul id="orders">
         
-           
-                  
-
-  
-    </body>
-</html>
+              </ul>
+              <p><span id="total"> </span></p>
+            </div>
+          </div>
+          <div id="contact" class="container-fluid padding bg3">
+            <h2>contact us:</h2>
+            <form id="feedback">
+              <div class="form-row">
+                <div class="col-4">
+                  <input type="text" id="name" class="form-control" placeholder="Name...">
+                </div>
+                <div class="col-4">
+                  <input type="text" id="mail" class="form-control" placeholder="E-mail...">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="message" placeholder="your message here..." id="exampleFormControlTextarea1" rows="7" required></textarea>
+              </div>
+            </form>
+          </div>
+        </body>
+        </html>
